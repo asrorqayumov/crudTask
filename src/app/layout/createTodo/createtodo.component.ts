@@ -23,6 +23,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   selector: 'app-create-todo',
   templateUrl: 'createTodo.component.html',
   standalone: true,
+  styleUrl:'./createTodo.component.css',
   imports: [
     MatFormFieldModule,
     MatInputModule,

@@ -43,28 +43,12 @@ export class AuthService {
 
   verify(): boolean {
     const user = this.getUser();
-    if (!user) return false;
 
-    if (this.parseJwt(user.access_token).exp * 1000 < new Date().getTime()) {
-      this.logout();
-    }
-
+    if (!user?.access_token) return false;
+    
     return true;
   }
-  private parseJwt(token: string): any {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(
-      atob(base64)
-        .split('')
-        .map(function (c) {
-          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join('')
-    );
-
-    return JSON.parse(jsonPayload);
-  }
+ 
 
   login(value: UserLogin): Observable<UserLoginResponse> {
     return this.http$
