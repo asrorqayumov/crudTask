@@ -53,11 +53,10 @@ export class CreateTodoComponent implements OnInit {
 
   onSubmit(): void {
     this.taskService.create(this.form.value).subscribe((res) => {
-        console.log(res);
+      
 
         if (res) {
             alert('Task created successfully ');
-           
         }
 
     });
