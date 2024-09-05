@@ -1,0 +1,9 @@
+.form-wrapper {
+  padding: 12px 15px;
+}
+
+.deleteBtn {
+  background-color: red;
+  color: white;
+  margin-right: 10px;
+}

@@ -1,0 +1,16 @@
+
+
+.form{
+    margin: 10px;
+}
+
+.wrapper{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-wrapper{
+    margin-top: 50px;
+}

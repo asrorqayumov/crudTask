@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<section>
+  <div class="tasks-wrapper">
+    @for (task of tasks ; track task.id) {
+      <app-task [task]="task"  (Deleteemitter)="handleDeleteTask($event)" (editEmitter)="handleEditTask($event)" />
+    }
+  </div>
+</section>

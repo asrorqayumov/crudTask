@@ -1,0 +1,20 @@
+<mat-toolbar class="rounded-xl !bg-gray-100">
+  <button
+    [routerLink]="['/home']"
+    routerLinkActive="!bg-[#02BF67] !text-white"
+    class="!mr-1"
+    mat-stroked-button
+  >
+    <span>Todo</span>
+  </button>
+  <span class="flex-1"></span>
+  <button
+    [routerLink]="['/create-todo']"
+    routerLinkActive="!bg-[#02BF67] !text-white"
+    class="ms-2"
+    mat-stroked-button
+  >
+    Create Task
+  </button>
+  <button class="ms-2" mat-stroked-button (click)="logout()">Logout</button>
+</mat-toolbar>

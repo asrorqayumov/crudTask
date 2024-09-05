@@ -1,0 +1,6 @@
+.tasks-wrapper{
+    margin: 10px;
+    display:flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}

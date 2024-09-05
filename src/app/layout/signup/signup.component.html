@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1 class="!text-4xl !mb-7 text-center">Sign Up</h1>
+    <div class="input-wrapper">
+      <mat-form-field class="w-full">
+        <mat-label>Name </mat-label>
+        <input matInput type="text" formControlName="name" />
+        @if (form.get('name')?.hasError('required')) {
+        <mat-error>Name is required</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-wrapper">
+      <mat-form-field class="w-full">
+        <mat-label>Email </mat-label>
+        <input matInput type="email" formControlName="email" />
+        @if (form.get('email')?.hasError('required')) {
+        <mat-error>Email is required</mat-error>
+        }@if (form.get('email')?.hasError('email')) {
+        <mat-error>Email must contain {{ "@" }} symbol</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-wrapper">
+      <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="**********"
+          type="password"
+          formControlName="password"
+        />
+        @if (form.get('password')?.hasError('required')) {
+        <mat-error>Password is required</mat-error>
+        } @if (form.get('password')?.hasError('minlength')) {
+        <mat-error>Password must be at least 3 characters long</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <div class="input-wrapper">
+      <mat-form-field class="w-full">
+        <mat-label>Confirm password</mat-label>
+        <input
+          matInput
+          placeholder="**********"
+          type="password"
+          formControlName="password_confirmation"
+        />
+        @if (form.get('password_confirmation')?.hasError('required')) {
+        <mat-error>Password confirmation is required</mat-error>
+        } @if (form.get('password_confirmation')?.hasError('minlength')) {
+        <mat-error
+          >Password confirmation must be at least 3 characters long</mat-error
+        >
+        }
+      </mat-form-field>
+    </div>
+
+    <button
+      class="w-full"
+      type="submit"
+      color="primary"
+      mat-flat-button
+      [disabled]="form.invalid"
+    >
+      Sign up
+    </button>
+
+    <p class="w-full flex justify-center !mt-[22px]">
+      Already have an account ?
+      <a class="no-underline text-blue-600" routerLink="/login"> Login </a>
+    </p>
+  </form>
+</div>
