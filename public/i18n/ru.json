@@ -1,0 +1,26 @@
+{
+    "logYourAccount": "Войдите в свою учетную запись",
+    "password": "Пароль",
+    "login": "Войти",
+    "dontHaveAccount": "У вас нет учетной записи?",
+    "HaveAccount": "Уже есть учетная запись",
+    "signup": "Зарегистрироваться",
+    "name": "Имя",
+    "confirmPassword": "Подтвердите пароль",
+    "logout": "Выйти",
+    "tasks": "Задачи",
+    "createtask": "Создать задачу",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "edittask": "Редактировать задачу",
+    "title": "Название",
+    "description": "Описание",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "required": "обязательно",
+    "create": "Создать",
+    "task-created-successfully": "Задача успешно создана",
+    "notfound": "Не найдено",
+    "gotohome": "Вернуться на главную"
+  }
+  

@@ -16,6 +16,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -31,6 +32,7 @@ import { MatDividerModule } from '@angular/material/divider';
     FormsModule,
     MatIconModule,
     MatDividerModule, 
+    TranslateModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',

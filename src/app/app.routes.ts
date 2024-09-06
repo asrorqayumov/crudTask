@@ -3,7 +3,7 @@ import { LoginComponent } from './layout/login/login.component';
 import { SignupComponent } from './layout/signup/signup.component';
 import { HomeComponent } from './layout/home/home.component';
 import { NotFoundComponent } from './layout/notFound/notfound.component';
-import { AuthGuard, NoAuthGuard } from './auth/guards/auth.guard';
+import { AuthGuard } from './auth/guards/auth.guard';
 import { CreateTodoComponent } from './layout/createTodo/createtodo.component';
 
 export const routes: Routes = [
@@ -14,14 +14,10 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    canMatch: [NoAuthGuard],
-    canActivate: [NoAuthGuard],
     component: LoginComponent,
   },
   {
     path: 'signup',
-    canMatch: [NoAuthGuard],
-    canActivate: [NoAuthGuard],
     component: SignupComponent,
   },
   {

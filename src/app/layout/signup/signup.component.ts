@@ -1,11 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,9 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
 import { passwordMatchValidator } from '../../auth/passwordValidator/password.validator';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signup',
@@ -30,13 +27,12 @@ import { passwordMatchValidator } from '../../auth/passwordValidator/password.va
     ReactiveFormsModule,
     MatError,
     FormsModule,
-    MatIconModule,
-    MatDividerModule,
+    TranslateModule
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })
-export class SignupComponent {
+export class SignupComponent  implements OnInit{
   formBuilder = inject(FormBuilder);
   authService = inject(AuthService);
   router = inject(Router);
@@ -60,7 +56,6 @@ export class SignupComponent {
 
   onSubmit(): void {
     this.authService.signup(this.form.value).subscribe((res) => {
-      console.log(res);
       if (res.message.includes('successfully')) {
         this.router.navigateByUrl('login')
       }

@@ -12,8 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatError, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import {  RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { TaskService } from '../../services/task.service';
@@ -24,6 +23,7 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { TaskCreateResponse } from '../../models/ITask';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-modaldialog',
@@ -41,6 +41,7 @@ import { TaskCreateResponse } from '../../models/ITask';
     MatIconModule,
     MatDividerModule,
     NavbarComponent,
+    TranslateModule
   ],
   styleUrl:'./modaldialog.component.css',
 })

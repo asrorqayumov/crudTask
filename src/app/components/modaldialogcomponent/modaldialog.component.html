@@ -1,18 +1,18 @@
 <div class="form-wrapper">
     <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h1 class="!text-4xl !mb-7">Edit Task</h1>
+      <h1 class="!text-4xl !mb-7">{{"edittask"| translate}}</h1>
       <div>
         <mat-form-field class="w-full">
-          <mat-label>Title </mat-label>
+          <mat-label>{{"title"| translate}} </mat-label>
           <input matInput type="text" formControlName="title" />
           @if (form.get('title')?.hasError('required')) {
-          <mat-error>Title is required</mat-error>
+          <mat-error>{{"title"| translate}}  {{"required"| translate}}</mat-error>
           }
         </mat-form-field>
       </div>
       <div>
         <mat-form-field class="w-full">
-          <mat-label>Description </mat-label>
+          <mat-label>{{"description"| translate}} </mat-label>
           <textarea
             id=""
             cols="30"
@@ -21,14 +21,14 @@
             matInput
           ></textarea>
           @if (form.get('description')?.hasError('required')) {
-          <mat-error>Description is required</mat-error>
+          <mat-error>{{"description"| translate}}  {{"required"| translate}}</mat-error>
           }
         </mat-form-field>
       </div>
       <button
       mat-stroked-button class="deleteBtn"
           >
-            Cancel
+          {{"cancel"| translate}}
           </button>
       <button
         class="w-full"
@@ -37,7 +37,7 @@
         mat-flat-button
         [disabled]="form.invalid"
       >
-        Save
+      {{"save"| translate}}
       </button>
     </form>
   </div>

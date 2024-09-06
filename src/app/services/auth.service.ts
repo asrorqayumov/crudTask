@@ -6,7 +6,7 @@ import {
   UserRegister,
   UserRegisterResponse,
 } from '../models/IUser';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import {  Observable, tap } from 'rxjs';
 import { environment } from '../environments/env';
 import { Router } from '@angular/router';
 
@@ -18,10 +18,6 @@ export class AuthService {
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });
-
-  private user$ = new BehaviorSubject<UserLoginResponse | null>(null);
-
-  constructor() {}
 
   setUser(user: UserLoginResponse): void {
     if (user) {
@@ -38,14 +34,14 @@ export class AuthService {
       storedUser = JSON.parse(user);
     }
 
-    return this.user$.value || storedUser;
+    return storedUser;
   }
 
   verify(): boolean {
     const user = this.getUser();
 
     if (!user?.access_token) return false;
-    
+
     return true;
   }
  
@@ -71,6 +67,7 @@ export class AuthService {
       { headers: this.headers }
     );
   }
+
   logout() {
     localStorage.removeItem('user');
     this.router.navigateByUrl('/login');

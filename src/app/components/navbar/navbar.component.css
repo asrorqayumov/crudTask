@@ -1,0 +1,26 @@
+.ms-2 {
+  margin-left: 20px;
+}
+.select-lang {
+   padding: 5px 6px;
+   background-color: #F5F5F5;
+   color: black;
+   outline: none;
+   border: none;
+   border-radius: 5px;
+}
+.select-lang option {
+    font-size: 14px;
+    padding: 5px;  
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.nav-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+

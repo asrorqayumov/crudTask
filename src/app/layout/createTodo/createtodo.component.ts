@@ -1,41 +1,32 @@
 import { Component, OnInit, inject } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatError, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { Router, RouterLink } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
 import { TaskService } from '../../services/task.service';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-todo',
   templateUrl: 'createTodo.component.html',
   standalone: true,
-  styleUrl:'./createTodo.component.css',
+  styleUrl: './createTodo.component.css',
   imports: [
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule,
-    RouterLink,
     ReactiveFormsModule,
     MatError,
     FormsModule,
-    MatIconModule,
-    MatDividerModule,
- NavbarComponent
+    NavbarComponent,
+    TranslateModule
   ],
 })
 export class CreateTodoComponent implements OnInit {
@@ -53,12 +44,9 @@ export class CreateTodoComponent implements OnInit {
 
   onSubmit(): void {
     this.taskService.create(this.form.value).subscribe((res) => {
-      
-
-        if (res) {
-            alert('Task created successfully ');
-        }
-
+      if (res) {
+        alert('Task created successfully ');
+      }
     });
   }
 }

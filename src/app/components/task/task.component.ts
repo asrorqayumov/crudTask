@@ -9,10 +9,11 @@ import {
 import { TaskCreateResponse } from '../../models/ITask';
 import { TaskService } from '../../services/task.service';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-task',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, TranslateModule],
   template: `
     <div class="task-item">
       <h1>{{ task?.title }}</h1>
@@ -20,10 +21,10 @@ import { MatButtonModule } from '@angular/material/button';
 
       <div>
         <button (click)="edit()" mat-stroked-button class="editBtn">
-          Edit
+        {{"edit"| translate}}
         </button>
         <button (click)="delete()" mat-stroked-button class="deleteBtn">
-          Delete
+        {{"delete"| translate}}
         </button>
       </div>
     </div>

@@ -1,12 +1,12 @@
 <div class="wrapper">
     <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h1 class="!text-4xl !mb-7 text-center">Log into your account</h1>
+      <h1 class="!text-4xl !mb-7 text-center">{{"logYourAccount"| translate}}</h1>
       <div class="input-wrapper">
           <mat-form-field class="w-full">
             <mat-label>Email </mat-label>
             <input matInput type="email" formControlName="email" />
             @if (form.get('email')?.hasError('required')) {
-            <mat-error>Email is required</mat-error>
+            <mat-error>Email  {{"required"| translate}}</mat-error>
             }@if (form.get('email')?.hasError('email')) {
             <mat-error>Email must contain {{'@'}} symbol</mat-error>
             }
@@ -15,7 +15,7 @@
       </div>
     <div class="input-wrapper">
         <mat-form-field class="w-full">
-          <mat-label>Password</mat-label>
+          <mat-label>{{"password"| translate}}</mat-label>
           <input
             matInput
             placeholder="**********"
@@ -23,7 +23,7 @@
             formControlName="password"
           />
           @if (form.get('password')?.hasError('required')) {
-          <mat-error>Password is required</mat-error>
+          <mat-error>Password   {{"required"| translate}}</mat-error>
           } @if (form.get('password')?.hasError('minlength')) {
           <mat-error>Password must be at least 3 characters long</mat-error>
           }
@@ -38,12 +38,12 @@
         mat-flat-button
         [disabled]="form.invalid"
       >
-        Login
+      {{"login"| translate}}
       </button>
     
       <p class="w-full flex justify-center !mt-[22px]">
-        Don't you have an account?
-        <a class="no-underline text-blue-600" routerLink="/signup"> Sign up</a>
+        {{"dontHaveAccount"| translate}}
+        <a class="no-underline text-blue-600" routerLink="/signup">  {{"signup"| translate}}</a>
       </p>
 
     </div>
